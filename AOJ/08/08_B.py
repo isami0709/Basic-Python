@@ -7,4 +7,3 @@ while True:
         for d in n:
            num += int(d)
         print(num)
- 
