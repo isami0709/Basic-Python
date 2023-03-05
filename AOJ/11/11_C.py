@@ -25,21 +25,12 @@ class Dice:
         if v == self.e:
             self.a,self.b,self.c,self.d,self.e,self.f = self.a,self.e,self.d,self.c,self.b,self.f
         if u == self.a and v == self.b and w == self.c and x == self.d and y == self.e and z == self.f:
-            conc_list.append('y')
+            print('Yes')
         else:
-            None
+            print('No')
 
-n = int(input())
-dice_list = [input().split() for _ in range(n)]
-conc_list = []
-for i in range(n):
-    for j in range(n):
-        if i != j:
-            dice1 = Dice(dice_list[i][0],dice_list[i][1],dice_list[i][2],dice_list[i][3],dice_list[i][4],dice_list[i][5])
-            dice2 = Dice(dice_list[j][0],dice_list[j][1],dice_list[j][2],dice_list[j][3],dice_list[j][4],dice_list[j][5])
-            dice1.judge(dice_list[j][0],dice_list[j][1],dice_list[j][2],dice_list[j][3],dice_list[j][4],dice_list[j][5])
-
-if 'y' in conc_list:
-  print('No')
-else:
-  print('Yes')
+u,v,w,x,y,z = input().split()
+a,b,c,d,e,f = input().split()
+dice1 = Dice(u,v,w,x,y,z)
+dice2 = Dice(a,b,c,d,e,f)
+dice2.judge(u,v,w,x,y,z)
